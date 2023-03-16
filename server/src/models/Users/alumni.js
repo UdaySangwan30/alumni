@@ -78,7 +78,7 @@ const alumniSchema = new mongoose.Schema({
 
 alumniSchema.methods.generateAuthTokenAlumni=async function(){
     try{
-        const token= jwt.sign({_id:this._id.toString()},process.env.ALUMNI_SECRET_KEY)
+        const token= jwt.sign({_id:this._id.toString()},"usdhfiasgdfiasdfbdfgshisadhbfisaduf")
         this.tokens=this.tokens.concat({token:token})
         await this.save()
         return token
